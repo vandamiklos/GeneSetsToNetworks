@@ -8,3 +8,4 @@ Depends:
     ggraph,
     igraph,
     tidyverse
+RoxygenNote: 7.2.3
