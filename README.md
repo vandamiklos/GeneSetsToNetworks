@@ -15,6 +15,6 @@ install_github("vandamiklos/GeneSetsToNetworks")
 - library(tidyverse)
 - library(igraph)
 - library(ggraph)
-- 
+
 ## Now you are ready to create networks such as this:
 ![](https://github.com/vandamiklos/gene_sets_to_networks/blob/master/data/network.png)
