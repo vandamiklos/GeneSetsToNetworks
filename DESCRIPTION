@@ -1,0 +1,10 @@
+Package: GeneSetsToNetworks
+Type: Package
+Version: 1.0.0.0000
+Encoding: UTF-8
+Title: A collection of functions to convert gene-set enrichment analysis results to a network graph
+Depends:
+    R,
+    ggraph,
+    igraph,
+    tidyverse
