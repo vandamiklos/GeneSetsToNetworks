@@ -7,6 +7,7 @@
 #' gene-set it contains 0.
 #' @param gsea_result A Data Frame of a gene-set enrichment analysis result. Required columns: 
 #' Description, NES, core_enrichment.
+#' @export
 make_set_gene = function(gsea_result) {
   #select the description and core_enrichment columns
   genes = gsea_result[, c("Description", "core_enrichment")]
@@ -39,11 +40,13 @@ make_set_gene = function(gsea_result) {
 }
 
 
+
 #' Calculates the number of intersections
 #'
 #' Takes a gene-set enrichment analysis result as input and calculates the 
 #' number of intersections between each pair of gene-sets
 #' @param set_gene A Data Frame object, output of the make_set_gene() function
+#' @export
 make_intersection_table = function(gsea_result) {
   
   #make set_gene table
@@ -72,6 +75,7 @@ make_intersection_table = function(gsea_result) {
 }
 
 
+
 #' Calculates Jaccard similarity between each pair of gene-sets
 #'
 #' Takes a gene-set enrichment analysis result as input and calculates the 
@@ -79,6 +83,7 @@ make_intersection_table = function(gsea_result) {
 #' @param set_gene A Data Frame object, output of the make_set_gene() function
 #' @return Returns a Data Frame object. Each column and row represents a gene-set
 #' and values are the Jaccard similarity indexes of two gene-sets.
+#' @export
 make_jaccard_similarity_table = function(gsea_result){
   
   #create the intersection table
@@ -98,6 +103,7 @@ make_jaccard_similarity_table = function(gsea_result){
 }
 
 
+
 #' Make the edges of the graph
 #' 
 #' Creates a table that holds information about the edges of the graph. We can 
@@ -111,6 +117,7 @@ make_jaccard_similarity_table = function(gsea_result){
 #' @return Returns a table that defines the edges of the graph. It holds the 
 #' names of the two nodes an edge will connect and a value 
 #' - intersection or jaccard similarity - that will determine the line_width
+#' @export
 make_edge = function(df, name, cutoff, gsea_result) {
   #name the columns according to description
   colnames(df) = gsea_result$Description
@@ -140,6 +147,7 @@ make_edge = function(df, name, cutoff, gsea_result) {
 }
 
 
+
 #' Draw the network graph
 #' 
 #' Creates a network of the gene-sets.
@@ -153,6 +161,7 @@ make_edge = function(df, name, cutoff, gsea_result) {
 #' Description, NES, core_enrichment.
 #' @param name Can be either "jaccard similarity" or "intersect"
 #' @return Returns a ggplot object onto which additional layers can be added.
+#' @export
 draw_graph = function(graph, layout, edges, name, gsea_result,
                       low = low, mid = mid, high = high) {
   
@@ -183,6 +192,7 @@ draw_graph = function(graph, layout, edges, name, gsea_result,
 }
 
 
+
 #' Create networks from gene-sets
 #' 
 #' Expects a gene-set enrichment analysis result and creates a network graph from it.
@@ -198,6 +208,7 @@ draw_graph = function(graph, layout, edges, name, gsea_result,
 #' @param low Color of the gene-sets with negative NES. Default color: "#1465AC"
 #' @param mid Color of the gene-sets with zero NES. Default color: "white"
 #' @param high Color of the gene-sets with positive NES. Default color: "#B31B21"
+#' @export
 network_function = function(gsea_result, direction = "none", edges = "intersection", 
                             layout, cutoff_intersection = 0, cutoff_jaccard = 0.7,
                             low = "#1465AC", mid = "white", high = "#B31B21"){
