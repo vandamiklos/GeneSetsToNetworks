@@ -17,4 +17,4 @@ install_github("vandamiklos/GeneSetsToNetworks")
 - library(ggraph)
 
 ## Now you are ready to create networks such as this:
-![]((https://github.com/vandamiklos/GeneSetsToNetworks/blob/main/data/network.png)https://github.com/vandamiklos/GeneSetsToNetworks/blob/main/data/network.png)
+![](https://github.com/vandamiklos/GeneSetsToNetworks/blob/main/data/network.png)
