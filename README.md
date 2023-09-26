@@ -2,7 +2,7 @@
 
 A collection of functions to convert gene-set enrichment analysis results to a network graph.
 
-## Install
+## Installation
 
 ```
 library(devtools)
@@ -21,6 +21,12 @@ gsea_result = read_csv(url("https://raw.githubusercontent.com/vandamiklos/GeneSe
 #create the network graph
 network_function(gsea_result, direction = "none", edges = "intersection", 
                  layout = "kk", cutoff_intersection = 1)
+```
+
+For help use:
+
+```
+?network_function
 ```
 
 ## Prerequisites:
