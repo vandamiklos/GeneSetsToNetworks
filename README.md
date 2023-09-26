@@ -14,9 +14,13 @@ install_github("vandamiklos/GeneSetsToNetworks")
 ```
 library(GeneSetsToNetworks)
 
+#example gsea_result
+libary(readr)
+gsea_result = read_csv(url("https://raw.githubusercontent.com/vandamiklos/GeneSetsToNetworks/main/data/data.csv"))
+
+#create the network graph
 network_function(gsea_result, direction = "none", edges = "intersection", 
-                 layout, cutoff_intersection = 0, cutoff_jaccard = 0.7,
-                 low = "#1465AC", mid = "white", high = "#B31B21")
+                 layout = "kk", cutoff_intersection = 1)
 ```
 
 ## Prerequisites:
